@@ -9,7 +9,7 @@ slate, and says so when a conversation has run long enough that it should be han
 In Claude Code, two lines:
 
 ```
-/plugin marketplace add git@github.com:nv0236-ship-it/nudge-plugin.git
+/plugin marketplace add nv0236-ship-it/nudge-plugin
 /plugin install nudge@nudge
 ```
 
@@ -24,8 +24,7 @@ It says what it will write and waits for a yes.
 ## What you need
 
 Claude Code, and Node.js 22 or newer (`node --version`). Nothing else: no account, no sign-up, no background
-service, no phone. A private repo is fine — Claude Code uses the git credentials already on your machine, so
-use the SSH address if the repo is private, which keeps the automatic update check working.
+service, no phone, no GitHub account. Updates arrive by themselves when Claude Code starts.
 
 ## What it does to your files
 
