@@ -1,0 +1,21 @@
+{
+  "name": "nudge",
+  "displayName": "Nudge",
+  "author": {
+    "name": "Nudge",
+    "url": "https://nudge.build"
+  },
+  "description": "Nudge: a chief of staff for your coding agents. It introduces itself the next time you type; say \"is Nudge installed\" any time.",
+  "version": "0.20.1",
+  "homepage": "https://nudge.build",
+  "skills": "./skills",
+  "mcpServers": {
+    "nudge-delegation": {
+      "command": "node",
+      "args": [
+        "${CLAUDE_PLUGIN_ROOT}/hooks/delegation.mjs",
+        "mcp"
+      ]
+    }
+  }
+}
