@@ -1,8 +1,8 @@
 # Nudge
 
-Your coding agent forgets everything between sessions, and you pay to tell it again. Nudge keeps a journal
-as it works and a one-page hand-off it keeps current, hands the next session that page instead of a blank
-slate, and says so when a conversation has run long enough that it should be handed over.
+Your coding agent forgets everything between sessions, and you pay to tell it again. Nudge keeps notes as it
+works, opens the next session on what is in play instead of a blank slate, brings back related earlier work
+when you ask for something, and says so when a conversation has run long enough to cost more than it should.
 
 ## Install
 
@@ -13,13 +13,7 @@ In Claude Code, two lines:
 /plugin install nudge@nudge
 ```
 
-Then, in a project you want it to remember:
-
-```
-/nudge:memory
-```
-
-It says what it will write and waits for a yes.
+The next time you type, Nudge introduces itself and asks once whether it may switch on in your projects.
 
 ## What you need
 
@@ -28,10 +22,12 @@ service, no phone, no GitHub account. Updates arrive by themselves when Claude C
 
 ## What it does to your files
 
-Two files in the project you switch it on in (`.nudge/journal.md`, `.nudge/handoff.md`), and one marked block
-at the end of that project's `CLAUDE.md`. Nothing else, nowhere else, and nothing leaves your machine.
+One folder in each git project it is on in: `.nudge/log/`, one notes file per session. Its working rules come
+with each session start, so nothing is written into your `CLAUDE.md`. Nothing about you or your work leaves
+your machine; the only download is two public model price lists, about once a day (`NUDGE_PRICE_FEED=off`
+stops it).
 
 ## Turning it off
 
-`/plugin uninstall nudge`. Your journal and hand-off stay where they are — they are your record,
+`/plugin uninstall nudge`. Your notes stay where they are — they are your record,
 not Nudge's.

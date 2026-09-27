@@ -1,4 +1,4 @@
-# Nudge for Claude Code (0.20.2)
+# Nudge for Claude Code (0.21.0)
 
 ## Is it installed?
 
@@ -12,18 +12,20 @@ for Nudge on the machine.
 Installing this plugin is the whole install. It brings its own hooks and the script they run; there is nothing
 else to download, no background service and no account.
 
-- `/nudge:memory` — turn it on for a project (asks first, names every file it will touch).
+Nudge asks once per machine. After a yes, memory switches on by itself in every git project.
+- `/nudge:memory` — turn it off or back on, for one project or the whole machine.
 
 Once it is on, in that project:
 
-- every turn is asked for one line in `.nudge/journal.md`, and the turn is sent back once if it forgets;
-- every new session — fresh, resumed, cleared or compacted — is handed the entries written since `.nudge/handoff.md`
-  last changed, and told to fold them in rather than rebuild it;
-- sessions running side by side write only the journal; the hand-off is folded when a session opens, and a
-  session whose fold replaced another's is sent back once to merge it;
-- a conversation past the hand-off point is told so, every turn, and held once at the end if it goes to twice it.
+- every session writes its own notes in `.nudge/log/`: what was asked, done and decided, plus side ideas,
+  one line each, so sessions running side by side never write the same file;
+- a new session opens on what is in play, and your first request brings back the related earlier work;
+- an idea from days ago is connected to new work when a session starts, and "why did we…?" is answered
+  from the recorded path;
+- past 150K tokens it suggests wrapping up, at most twice; past 300K it says what the extra length is costing,
+  in your plan's terms. Say "extend" or "no length reminders" to change that.
 
-In any project without a `.nudge/` folder it says nothing at all.
+Projects that already keep `.nudge/journal.md` and `.nudge/handoff.md` carry on with them.
 
 ## The rest — needs the Nudge CLI
 
@@ -39,6 +41,7 @@ command is a request; the yes is the consent.
 
 ## Where things are kept
 
-The journal and the hand-off are files in your own repo — yours to read, edit, commit or delete. Nudge's own
-state (which project the last turn was in, one mark per turn) lives in `~/.nudge`, or wherever `NUDGE_HOME`
-points. Nothing leaves the machine.
+The notes are files in your own repo — yours to read, edit, commit or delete. Nudge's own state (usage
+tallies, one mark per turn) lives in `~/.nudge`, or wherever `NUDGE_HOME` points. Nothing about you or your
+work leaves the machine. About once a day Nudge downloads two public model price lists (LiteLLM and
+OpenRouter) so its cost figures stay current; `NUDGE_PRICE_FEED=off` stops that.
