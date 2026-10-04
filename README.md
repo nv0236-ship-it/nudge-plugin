@@ -9,7 +9,7 @@ when you ask for something, and says so when a conversation has run long enough 
 In Claude Code, two lines:
 
 ```
-/plugin marketplace add https://github.com/nv0236-ship-it/nudge-plugin.git
+/plugin marketplace add nv0236-ship-it/nudge-plugin
 /plugin install nudge@nudge
 ```
 
