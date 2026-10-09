@@ -6,7 +6,7 @@
     "url": "https://nudge.build"
   },
   "description": "Nudge: a chief of staff for your coding agents. It introduces itself the next time you type; say \"is Nudge installed\" any time.",
-  "version": "0.32.0",
+  "version": "0.33.0",
   "homepage": "https://nudge.build",
   "skills": "./skills",
   "mcpServers": {

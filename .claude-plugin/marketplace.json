@@ -10,7 +10,7 @@
       "name": "nudge",
       "source": "./plugins/nudge",
       "description": "Keeps notes as you work so a fresh session starts where the last one stopped, brings back related earlier work, and says when a conversation has run long.",
-      "version": "0.32.0"
+      "version": "0.33.0"
     }
   ]
 }
