@@ -1,6 +1,6 @@
 ---
 name: delegation
-description: Turn Nudge's delegation module off or back on, for this project or this machine. Use when the user asks to stop, disable, switch off, enable or switch on delegation, or asks what handing work to helper agents has cost.
+description: Turn Nudge's delegation module off or back on, for this project or this machine. Use when the user asks to stop, disable, switch off, enable or switch on delegation, asks what handing work to helper agents has cost, or asks to turn hand-over to cheaper helpers on or off.
 ---
 
 # /nudge:delegation
@@ -30,3 +30,10 @@ from the project's folder, and show the one line it prints.
 - Off deletes nothing: it writes one marker file, `.nudge/off-delegation` in the project or `~/.nudge/off-delegation` for the machine.
   Say that, so nobody thinks their record is gone.
 - A request to switch is the consent; do it, then report. Never switch the other way from what was asked.
+
+## Hand-over (off until asked)
+
+- *hand jobs over when my week runs low / turn on hand-over* → `node "<that path>" handover on` (70% of the
+  weekly limit; a number after `on` changes it). *stop handing over* → `node "<that path>" handover off`.
+- On, it also makes sure the status line passes Nudge the weekly figure, the only place Claude Code gives it.
+  A status line the user already has keeps showing exactly as before. Show the line the script prints.
