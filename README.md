@@ -32,13 +32,24 @@ The next time you type, Nudge introduces itself and asks once whether it may swi
 
 ## What you need
 
-Claude Code, and Node.js 22 or newer (`node --version`). Nothing else: no account, no sign-up, no background
-service, no phone, no GitHub account. Updates arrive by themselves when Claude Code starts.
+**Node.js 22 or newer** (`node --version`): Claude Code can be installed without Node, but every Nudge hook
+runs on it, so install Node first. Nothing else: no account, no sign-up, no background service, no GitHub
+account. Updates arrive by themselves when Claude Code starts.
 
 ## What it does to your files
 
-One folder in each git project it is on in: `.nudge/log/`, one notes file per session. Its working rules come
-with each session start, so nothing is written into your `CLAUDE.md`.
+One folder in each git project it is on in: `.nudge/log/`, one notes file per session. It is kept out of git
+(the project's own `.git/info/exclude`, so no tracked file changes); say "share notes" to commit the notes
+with your code. Its working rules come with each session start, so nothing is written into your `CLAUDE.md`.
+
+Phone sessions, which keep each project ready in the Claude app, are off until you say "turn on phone
+sessions"; they need Claude Code signed in with a claude.ai account.
+
+## For companies
+
+Everything Nudge runs, reads, writes and sends, and the settings an administrator can set for every developer
+through Claude Code's managed settings, are on one page: [SECURITY.md](SECURITY.md). On an API key the
+reminders say what a reply costs, and `delegate` turns on Haiku helpers at a fraction of the price per token.
 
 ## What leaves your machine
 
@@ -53,8 +64,8 @@ on your key. Nothing about how your helpers did is sent anywhere.
 
 ## Turning it off
 
-`/plugin uninstall nudge`. Your notes stay where they are — they are your record,
-not Nudge's.
+If you used `delegate auto`, type `delegate off` first: it puts your status line back as it was. Then
+`/plugin uninstall nudge`. Your notes stay where they are — they are your record, not Nudge's.
 
 ## Licence
 

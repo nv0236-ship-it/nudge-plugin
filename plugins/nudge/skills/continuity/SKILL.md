@@ -34,3 +34,6 @@ from the project's folder, and show the one line it prints.
 - Turning continuity off in a project whose CLAUDE.md or AGENTS.md still carries an older Nudge memory block (between
   `<!-- nudge:memory:start ·…` markers): the script says so. Offer to remove that block; do not remove it unasked.
 - If the user never said yes for this machine, `switch continuity on here` is their yes for this one project.
+- A new project's `.nudge/` is kept out of git (its local `.git/info/exclude`), so notes are not committed by
+  accident. *share notes / commit the notes* → `node "<that path>" notes shared`; *keep notes local* →
+  `node "<that path>" notes local`. Show the line it prints.
