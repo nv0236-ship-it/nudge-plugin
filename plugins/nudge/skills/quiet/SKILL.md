@@ -5,7 +5,7 @@ description: Turn Nudge down: stop its reminders for this session, stop its dail
 
 # /nudge:quiet
 
-Turns Nudge's reminders down. It does **not** turn memory off: the journal and the hand-off keep working,
+Turns Nudge's reminders down. It does **not** turn continuity off: the journal and the hand-off keep working,
 Nudge just stops asking every turn.
 
 ## The script
@@ -26,7 +26,7 @@ loads, so none of these is one.
 - *stop updating itself / I'll update it myself* → `updates off`. *update itself again* → `updates on`.
   Updates are on when Nudge is installed, because a version nobody pulls is a version nobody has. Turning
   them off is remembered for good — Nudge never turns them back on by itself.
-- *turn memory off altogether* → this is the wrong skill. Say what `/nudge:memory` does and let them choose;
+- *turn continuity off altogether* → this is the wrong skill. Say what `/nudge:continuity` does and let them choose;
   never switch a module off because someone asked for quiet.
 
 ## What to do with it

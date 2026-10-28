@@ -2,11 +2,22 @@
 
 Your coding agent forgets everything between sessions, and you pay to tell it again. Nudge keeps notes as it
 works, opens the next session on what is in play instead of a blank slate, brings back related earlier work
-when you ask for something, and says so when a conversation has run long enough to cost more than it should.
+when you ask for something, and tells you when a conversation has grown long enough that each reply costs
+several times a fresh start's tokens. That is **continuity**.
 
-It also watches what helper agents cost you. Before Claude starts a helper, Nudge names the cheapest model that
-has proven itself on that kind of job, so routine reading, searching and test-first changes run on a smaller
-model on your own Claude plan instead of the one you are talking to.
+It also places work on the right model. Before Claude starts a helper, Nudge names the cheapest model that
+has proven itself on that kind of job, so routine work runs on a smaller model on your own Claude plan instead
+of the one you are talking to. That is **delegation**. Type `delegate` to have Nudge hand suitable jobs to Haiku
+helpers, `delegate auto` to do it once your week is 70% used, or `delegate workers` to also use cheaper models
+from other companies through your own AI gateway key.
+
+## What "proven" means
+
+A model is proven on a kind of job once it has passed at least five in a row with none failed since, graded by
+rule (the job's own tests, or an answer checked against the code), never by another model. Today Haiku is
+proven on finding code, renames, code questions, writing tests for named cases and building from a spec,
+from about 500 graded jobs replayed on the real code and commits of two TypeScript projects. It is early: the advice is
+only as wide as those jobs, and it changes as more are graded.
 
 ## Install
 
@@ -37,7 +48,8 @@ the kind of job, a label such as `locate-definition`, and answers which model is
 (`NUDGE_PUBLIC_API=off` stops it, and the advice then comes from the rules inside the plugin).
 
 Handing work to models from other companies (through your own Vercel AI Gateway key) is off unless you turn it
-on in a project; that sends the job's files to that model, and costs a few cents a job on your key.
+on in a project with `delegate workers`; that sends the job's files to that model, and costs a few cents a job
+on your key. Nothing about how your helpers did is sent anywhere.
 
 ## Turning it off
 

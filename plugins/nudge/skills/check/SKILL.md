@@ -20,6 +20,6 @@ Whether Nudge is installed on this machine, and whether it is on for this projec
   not open ports. That search is what this skill exists to replace, and it has taken minutes to conclude
   what the line above says at once.
 - `Memory for this project: OFF` means Nudge is installed and deliberately quiet here, not broken. Offer
-  `/nudge:memory`; do not turn it on without being asked.
+  `/nudge:continuity`; do not turn it on without being asked.
 - If this command itself fails, say that and stop. A failure here is worth reporting; it is not a reason
   to start searching.

@@ -1,6 +1,6 @@
 ---
 name: delegation
-description: Turn Nudge's delegation module off or back on, for this project or this machine. Use when the user asks to stop, disable, switch off, enable or switch on delegation, asks what handing work to helper agents has cost, or asks to turn hand-over to cheaper helpers on or off.
+description: Turn Nudge's delegation module off or back on, for this project or this machine. Use when the user asks to stop, disable, switch off, enable or switch on delegation, asks what handing work to helper agents has cost, asks to delegate jobs to Haiku or cheaper outside models, to turn the guard on or off, or what delegation is set to.
 ---
 
 # /nudge:delegation
@@ -31,9 +31,13 @@ from the project's folder, and show the one line it prints.
   Say that, so nobody thinks their record is gone.
 - A request to switch is the consent; do it, then report. Never switch the other way from what was asked.
 
-## Hand-over (off until asked)
+## Delegate (off until asked)
 
-- *hand jobs over when my week runs low / turn on hand-over* → `node "<that path>" handover on` (70% of the
-  weekly limit; a number after `on` changes it). *stop handing over* → `node "<that path>" handover off`.
-- On, it also makes sure the status line passes Nudge the weekly figure, the only place Claude Code gives it.
-  A status line the user already has keeps showing exactly as before. Show the line the script prints.
+Typed as the whole message, `delegate …` is done by Nudge's own hook; nothing to run. Asked in other words, run
+`node "<that path>" delegate <words>` and show the line it prints:
+- *hand jobs to Haiku / delegate* → `delegate` (on now). *when my week runs low* → `delegate auto` (70%;
+  a number after it changes it; it also makes sure the status line passes Nudge the weekly figure, and a
+  status line the user already has keeps showing exactly as before). *stop* → `delegate off`.
+- *block helpers that skip the plan* → `delegate strict` (the guard; `delegate strict off` undoes it).
+- *use cheaper outside models here* → `delegate workers` (this project; their own AI gateway key,
+  AI_GATEWAY_API_KEY, billed by the gateway). `delegate status` says what is on.

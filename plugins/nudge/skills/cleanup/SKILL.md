@@ -27,7 +27,7 @@ fail every session and achieve nothing.
   loads, before anyone has answered.
 
 - It writes a backup beside `settings.json` first and names it. Pass that name on.
-- Say what is **not** touched, because that is the worry: the Nudge plugin, the memory hooks, the status
+- Say what is **not** touched, because that is the worry: the Nudge plugin, the continuity hooks, the status
   line and every other setting are left exactly as they are. This removes dead wiring, not Nudge.
 - Hooks are read at session start, so the failures stop from the next session, not this one.
 - If it reports that the status line also posts to the dead port, pass that on as it is written. Nudge does

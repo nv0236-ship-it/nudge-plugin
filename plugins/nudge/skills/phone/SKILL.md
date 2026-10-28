@@ -5,7 +5,7 @@ description: Turn off, or back on, Nudge keeping this project ready in the Claud
 
 # /nudge:phone
 
-Nudge keeps one Claude Code Remote Control listener running for each project with memory on, so the project
+Nudge keeps one Claude Code Remote Control listener running for each project with continuity on, so the project
 shows in the Claude app and at claude.ai/code and a fresh session there is one tap — no terminal on the computer.
 It is started by the session-start hook, and started again at the next session start after a reboot.
 
