@@ -62,7 +62,7 @@
     ],
     "PreToolUse": [
       {
-        "matcher": "Agent|Task|mcp__.*nudge-delegation__record_plan",
+        "matcher": "Agent|Task|mcp__.*nudge-delegation__(record_plan|ask_delegation|handover_receipt)",
         "hooks": [
           {
             "type": "command",
