@@ -1,21 +1,26 @@
-# Nudge for Claude Code (0.45.0)
+# Nudge for Claude Code (0.46.0)
 
 ## Is it installed?
 
-- `/nudge:check` — says what is on: the plugin, whether this project has continuity, and whether the CLI is here.
+- `/nudge:check` — says what is on: the plugin, hand-over, sharing, and whether the CLI is here.
 
 It runs the plugin's own script, so it needs nothing else and answers at once. Ask it rather than looking
 for Nudge on the machine.
 
-## Continuity — works on its own
+## The checked hand-over — on after one yes
 
 Installing this plugin is the whole install. It brings its own hooks and the script they run; there is nothing
 else to download, no background service and no account.
 
-Nudge asks once per machine. After a yes, continuity switches on by itself in every git project.
-- `/nudge:continuity` — turn it off or back on, for one project or the whole machine.
+Nudge asks once per machine whether to turn hand-over on. After a yes, in every git project, Claude writes a
+failing test first and hands the coding to a Haiku helper; when the helper stops, Nudge runs that test itself,
+sends the helper back once on a fail, and on a second fail tells Claude to take the job back.
+- `/nudge:metrics` — what was handed over, passed, sent back and taken back, and the estimated saving.
+- `/nudge:sharing` — the weekly summary: off unless you said yes; `preview` shows it, `off` stops it.
 
-Once it is on, in that project:
+## Continuity — for projects that already have it
+
+Continuity is held back for new users. Where an earlier yes turned it on, it carries on, and in that project:
 
 - every session writes its own notes in `.nudge/log/`: what was asked, done and decided, plus side ideas,
   one line each, so sessions running side by side never write the same file;
@@ -36,7 +41,7 @@ these as your whole message:
 
 - `delegate` — Nudge tells Claude to hand suitable jobs to Haiku helpers on your plan, from now.
 - `delegate auto` — the same, once your weekly limit passes 70% (a number after it changes that).
-- `delegate off` — back to advice only, the default.
+- `delegate off` — stops hand-over: advice only.
 - `delegate strict` — the guard: a helper started with no plan, or on a dearer model than the proven one
   without a stated reason, is blocked. Off by default; `delegate strict off` undoes it.
 - `delegate workers` — in this project, Nudge may hand a job to a cheaper model from another company through
@@ -58,7 +63,7 @@ command is a request; the yes is the consent.
 
 ## Where things are kept
 
-The notes are files in your own repo — yours to read, edit, commit or delete. Nudge's own state (usage
-tallies, one mark per turn) lives in `~/.nudge`, or wherever `NUDGE_HOME` points. Nothing about you or your
-work leaves the machine. About once a day Nudge downloads two public model price lists (LiteLLM and
-OpenRouter) so its cost figures stay current; `NUDGE_PRICE_FEED=off` stops that.
+Nudge's own records (hand-overs, checks, usage tallies) live in `~/.nudge`, or wherever `NUDGE_HOME` points;
+continuity's notes are files in your own repo. No code, file names or prompts leave the machine; the weekly
+summary goes only after a yes to sharing (PRIVACY.md). About once a day Nudge downloads two public model price
+lists (LiteLLM and OpenRouter) so its cost figures stay current; `NUDGE_PRICE_FEED=off` stops that.

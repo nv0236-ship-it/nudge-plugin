@@ -26,8 +26,9 @@ Phone sessions, off unless asked for, run Claude Code's own `claude remote-contr
 | GitHub, about hourly, for a new version | nothing but the request | `NUDGE_UPDATES=off` |
 | Outside models, only after `delegate workers` in a project | the job's brief and files, to that model through the user's own AI gateway key | `NUDGE_WORKERS=off` |
 | Organising notes with a decision model, only with `NUDGE_JEV_KEY` set or `NUDGE_NOTES_AI=on` | short lines from the project's notes, to rank and link them | `NUDGE_NOTES_AI=off` |
+| The weekly sharing summary, only after a yes to sharing | kinds of job, sizes, pass and fail counts, the type of failure, the project's language and framework, under a random machine ID ([PRIVACY.md](PRIVACY.md)) | `NUDGE_SHARING=off` |
 
-No code, file names, notes, prompts or results go to Nudge. There is no telemetry and no account.
+No code, file names, notes, prompts or results go to Nudge. No telemetry unless you say yes to sharing; then only the weekly summary above. There is no account.
 
 On Amazon Bedrock, Google Vertex or Microsoft Foundry, Haiku helpers need Haiku enabled for the cloud
 account; where it is not, leave delegation off and the helpers stay on your own model.
@@ -45,6 +46,7 @@ Set these in Claude Code's managed settings (`env`) to decide for every develope
 | `NUDGE_PHONE=off` | no phone sessions |
 | `NUDGE_UPDATES=off` | no self-update; install reviewed versions with `claude plugin update nudge` |
 | `NUDGE_NOTES_AI=off` | notes are never sent to a model to be organised |
+| `NUDGE_SHARING=off` | no weekly summary is ever sent, whatever a developer answers |
 | `NUDGE_PUBLIC_API=off`, `NUDGE_PRICE_FEED=off` | no calls beyond the machine for advice or prices |
 
 Each release is a tagged commit in this repository, so a reviewed version can be pinned and mirrored.

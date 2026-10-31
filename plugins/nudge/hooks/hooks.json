@@ -90,6 +90,21 @@
           }
         ]
       }
+    ],
+    "SubagentStop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node",
+            "args": [
+              "${CLAUDE_PLUGIN_ROOT}/hooks/delegation.mjs",
+              "SubagentStop"
+            ],
+            "timeout": 600
+          }
+        ]
+      }
     ]
   }
 }

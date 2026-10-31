@@ -1,15 +1,17 @@
 # Nudge
 
-Your coding agent forgets everything between sessions, and you pay to tell it again. Nudge keeps notes as it
-works, opens the next session on what is in play instead of a blank slate, brings back related earlier work
-when you ask for something, and tells you when a conversation has grown long enough that each reply costs
-several times a fresh start's tokens. That is **continuity**.
+Nudge sits beside Claude Code, makes Claude write the test first and hand the coding to a cheaper model, checks
+every result itself, and keeps a record of what happened.
 
-It also places work on the right model. Before Claude starts a helper, Nudge names the cheapest model that
-has proven itself on that kind of job, so routine work runs on a smaller model on your own Claude plan instead
-of the one you are talking to. That is **delegation**. Type `delegate` to have Nudge hand suitable jobs to Haiku
-helpers, `delegate auto` to do it once your week is 70% used, or `delegate workers` to also use cheaper models
-from other companies through your own AI gateway key.
+For each code change, Claude writes a test that fails, then hands the coding to a Haiku helper on your own Claude
+plan. When the helper stops, **Nudge runs the test itself**: a pass goes back to Claude; a fail sends the helper
+back once with the output; a second fail comes back as CHECK FAILED and Claude does the job itself. You never get
+work that did not pass its test, and the bigger model's time goes to understanding and deciding, not typing.
+
+`/nudge:metrics` shows what happened: jobs handed over, passed first time, sent back, taken back by Claude, and
+the estimated saving. Hand-over starts after one yes, in the first session; `delegate off` stops it, `delegate auto` waits
+until your week is 70% used, and `delegate workers` also uses cheaper models from other companies through your
+own AI gateway key.
 
 ## What "proven" means
 
@@ -28,7 +30,7 @@ In Claude Code, two lines:
 /plugin install nudge@nudge
 ```
 
-The next time you type, Nudge introduces itself and asks once whether it may switch on in your projects.
+The next time you type, Nudge asks once whether to turn hand-over on.
 
 ## What you need
 
@@ -38,12 +40,9 @@ account. Updates arrive by themselves when Claude Code starts.
 
 ## What it does to your files
 
-One folder in each git project it is on in: `.nudge/log/`, one notes file per session. It is kept out of git
-(the project's own `.git/info/exclude`, so no tracked file changes); say "share notes" to commit the notes
-with your code. Its working rules come with each session start, so nothing is written into your `CLAUDE.md`.
-
-Phone sessions, which keep each project ready in the Claude app, are off until you say "turn on phone
-sessions"; they need Claude Code signed in with a claude.ai account.
+Nothing in your projects. Nudge keeps its own records of hand-overs and checks in `~/.nudge`; its instructions
+to Claude come with each session start, so nothing is written into your `CLAUDE.md`. Claude, not Nudge, edits
+your code; Nudge only runs the test the job names.
 
 ## For companies
 
@@ -53,20 +52,27 @@ reminders say what a reply costs, and `delegate` turns on Haiku helpers at a fra
 
 ## What leaves your machine
 
-No code, no file names, no notes. Two public model price lists are downloaded about once a day
+No code, no file names, no prompts. Two public model price lists are downloaded about once a day
 (`NUDGE_PRICE_FEED=off` stops it). The model advice comes from Nudge's public advice service: it is told only
 the kind of job, a label such as `locate-definition`, and answers which model is proven on it
 (`NUDGE_PUBLIC_API=off` stops it, and the advice then comes from the rules inside the plugin).
 
+Sharing is off unless you say yes when asked: then, once a week, a summary of your hand-overs (kinds of job,
+sizes, pass and fail counts, the type of failure, your project's language and framework) under a random machine
+ID, never code, file or project names, prompts or messages. In return: improved rules first, a comparison with
+similar projects in `/nudge:metrics`, and early warnings. `nudge sharing preview` shows exactly what would be
+sent, `nudge sharing off` stops it. Details in [PRIVACY.md](PRIVACY.md).
+
 Handing work to models from other companies (through your own Vercel AI Gateway key) is off unless you turn it
 on in a project with `delegate workers`; that sends the job's files to that model, and costs a few cents a job
-on your key. Nothing about how your helpers did is sent anywhere.
+on your key.
 
 ## Turning it off
 
 If you used `delegate auto`, type `delegate off` first: it puts your status line back as it was. Then
-`/plugin uninstall nudge`. Your notes stay where they are — they are your record, not Nudge's.
+`/plugin uninstall nudge`.
 
-## Licence
+## Licence and disclaimer
 
-MIT: see `LICENSE`.
+MIT: see `LICENSE`. Nudge is provided as is, without warranty. It changes how Claude splits and checks work; you
+and Claude remain responsible for the code that is kept. Savings figures are estimates.
