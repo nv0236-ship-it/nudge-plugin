@@ -85,7 +85,7 @@ and fail counts, the type of failure, your project's language and framework, Nud
 system) under a random machine ID, never code, file or project names, prompts or messages. In return: improved
 rules first, a comparison with similar projects in `/nudge:metrics`, and early warnings. `nudge sharing preview`
 shows exactly what is sent, `nudge sharing off` stops it, `nudge sharing every 2h` sends less often. A machine in a
-team (`nudge team`) also sends its week's hand-overs by project folder name, so the team sees its projects. Details in
+summary also names each project by folder, so everyone on the same project sees it in `nudge team`. Details in
 [PRIVACY.md](PRIVACY.md).
 
 Handing work to models from other companies (through your own Vercel AI Gateway key) is off unless you turn it
