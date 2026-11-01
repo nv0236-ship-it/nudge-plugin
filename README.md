@@ -15,9 +15,9 @@ own AI gateway key.
 
 ## Why Nudge
 
-If AI is the best worker we have ever had, people need to be its best leaders. Nudge brings the habits of good
-leadership to AI work: give each job to the right worker, check the work instead of taking its word for it, and
-keep everyone informed. Delegation with checked results is the first part; continuity comes next.
+AI should answer to the people who use it. Nudge brings accountability and transparency to AI work: every claim
+checked, every cost in the open, and the right model for each job, whichever company made it. Checked delegation
+is the first part; continuity, resourcing, proof and feedback come next.
 
 Each AI company builds tools that work best with its own models. None has a reason to say when another
 company's model would do a job better or for less, or to check its own work independently. Nudge sits on your

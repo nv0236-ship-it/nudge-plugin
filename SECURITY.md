@@ -41,7 +41,7 @@ Set these in Claude Code's managed settings (`env`) to decide for every develope
 |---|---|
 | `NUDGE_CONSENT=yes` or `no` | answers Nudge's one question for everyone |
 | `NUDGE_DELEGATE=on` | Claude hands proven jobs to Haiku helpers |
-| `NUDGE_GUARD=on` or `off` | blocks, or never blocks, helpers that skip the plan or the proven model |
+| `NUDGE_GUARD=on` or `off` | by default a helper on a dearer model than the one proven for its job is refused (with an override path); `on` also refuses helpers started without a plan, `off` never refuses |
 | `NUDGE_WORKERS=off` | every job stays on Claude; no outside model is ever used |
 | `NUDGE_PHONE=off` | no phone sessions |
 | `NUDGE_UPDATES=off` | no self-update; install reviewed versions with `claude plugin update nudge` |
