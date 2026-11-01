@@ -13,6 +13,16 @@ the estimated saving. Hand-over starts after one yes, in the first session; `del
 until your week is 70% used, and `delegate workers` also uses cheaper models from other companies through your
 own AI gateway key.
 
+## Why Nudge
+
+If AI is the best worker we have ever had, people need to be its best leaders. Nudge brings the habits of good
+leadership to AI work: give each job to the right worker, check the work instead of taking its word for it, and
+keep everyone informed. Delegation with checked results is the first part; continuity comes next.
+
+Each AI company builds tools that work best with its own models. None has a reason to say when another
+company's model would do a job better or for less, or to check its own work independently. Nudge sits on your
+side, works with every model, and takes no money from model providers. More at https://nudge.build/about.
+
 ## What "proven" means
 
 A model is proven on a kind of job once it has passed at least five in a row with none failed since, graded by
@@ -30,7 +40,20 @@ In Claude Code, two lines:
 /plugin install nudge@nudge
 ```
 
-The next time you type, Nudge asks once whether to turn hand-over on.
+The next time you type, Nudge asks one question: may Claude pass coding to Haiku, with Nudge testing the result?
+
+**For a team:** add this to a project's `.claude/settings.json` and commit it; everyone who opens the project is
+offered Nudge. **For a company:** the same block in Claude Code's managed settings reaches every developer.
+
+```json
+{
+  "extraKnownMarketplaces": { "nudge": { "source": { "source": "github", "repo": "https://github.com/nv0236-ship-it/nudge-plugin.git" } } },
+  "enabledPlugins": { "nudge@nudge": true }
+}
+```
+
+`nudge team create` makes a team code; with `"env": { "NUDGE_TEAM": "<code>" }` in the same file, `nudge team`
+shows the team's hand-overs by project and machine.
 
 ## What you need
 
@@ -57,11 +80,13 @@ No code, no file names, no prompts. Two public model price lists are downloaded 
 the kind of job, a label such as `locate-definition`, and answers which model is proven on it
 (`NUDGE_PUBLIC_API=off` stops it, and the advice then comes from the rules inside the plugin).
 
-Sharing is off unless you say yes when asked: then, once a week, a summary of your hand-overs (kinds of job,
-sizes, pass and fail counts, the type of failure, your project's language and framework) under a random machine
-ID, never code, file or project names, prompts or messages. In return: improved rules first, a comparison with
-similar projects in `/nudge:metrics`, and early warnings. `nudge sharing preview` shows exactly what would be
-sent, `nudge sharing off` stops it. Details in [PRIVACY.md](PRIVACY.md).
+Sharing is on unless you turn it off: every 30 minutes, a summary of your hand-overs (kinds of job, sizes, pass
+and fail counts, the type of failure, your project's language and framework, Nudge's version and your operating
+system) under a random machine ID, never code, file or project names, prompts or messages. In return: improved
+rules first, a comparison with similar projects in `/nudge:metrics`, and early warnings. `nudge sharing preview`
+shows exactly what is sent, `nudge sharing off` stops it, `nudge sharing every 2h` sends less often. A machine in a
+team (`nudge team`) also sends its week's hand-overs by project folder name, so the team sees its projects. Details in
+[PRIVACY.md](PRIVACY.md).
 
 Handing work to models from other companies (through your own Vercel AI Gateway key) is off unless you turn it
 on in a project with `delegate workers`; that sends the job's files to that model, and costs a few cents a job

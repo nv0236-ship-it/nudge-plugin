@@ -1,4 +1,4 @@
-# Nudge for Claude Code (0.47.0)
+# Nudge for Claude Code (0.48.0)
 
 ## Is it installed?
 
@@ -64,6 +64,6 @@ command is a request; the yes is the consent.
 ## Where things are kept
 
 Nudge's own records (hand-overs, checks, usage tallies) live in `~/.nudge`, or wherever `NUDGE_HOME` points;
-continuity's notes are files in your own repo. No code, file names or prompts leave the machine; the weekly
-summary goes only after a yes to sharing (PRIVACY.md). About once a day Nudge downloads two public model price
+continuity's notes are files in your own repo. No code, file names or prompts leave the machine; the sharing
+summary goes every 30 minutes unless you turn it off (PRIVACY.md). About once a day Nudge downloads two public model price
 lists (LiteLLM and OpenRouter) so its cost figures stay current; `NUDGE_PRICE_FEED=off` stops that.
