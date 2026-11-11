@@ -1,4 +1,4 @@
-# Nudge
+# Nudge for Claude Code
 
 Nudge sits beside Claude Code, makes Claude write the test first and hand the coding to a cheaper model, checks
 every result itself, and keeps a record of what happened.
