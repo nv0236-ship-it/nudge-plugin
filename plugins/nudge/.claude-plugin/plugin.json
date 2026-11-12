@@ -5,7 +5,7 @@
     "name": "Nudge",
     "url": "https://nudge.build"
   },
-  "description": "Nudge: a chief of staff for your coding agents. It introduces itself the next time you type; say \"is Nudge installed\" any time.",
+  "description": "Nudge: Claude writes a failing test first and hands the coding to a Haiku helper on your own plan; Nudge runs the test itself before anything comes back, and keeps the record."is Nudge installed\" any time.",
   "version": "0.48.24",
   "homepage": "https://nudge.build",
   "license": "MIT",
