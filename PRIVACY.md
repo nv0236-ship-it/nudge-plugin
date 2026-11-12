@@ -5,6 +5,7 @@
   sizes, pass and fail counts, the type of failure, your project's language and framework), Nudge's version and your
   operating system. It carries a random machine ID, never your name, email or account. To stop fake summaries, the service keeps
   a one-way scramble of the sending internet address for two days, never the address itself, then deletes it.
+  The service deletes each summary 30 days after it arrives.
 - Never collected: code, file names, prompts, Claude's replies, passwords or keys; project names only as said below.
 - Your control: `nudge sharing preview` shows exactly what is sent; `nudge sharing off` stops it any time;
   `nudge sharing every 2h` sends less often.
