@@ -5,7 +5,7 @@
     "name": "Nudge",
     "url": "https://nudge.build"
   },
-  "description": "Nudge: Claude writes a failing test first and hands the coding to a Haiku helper on your own plan; Nudge runs the test itself before anything comes back, and keeps the record.",
+  "description": "Same Claude, under a third of the bill. Nudge hands routine work to a faster, cheaper helper agent, checks every result, and shows you where each dollar went.",
   "version": "0.48.24",
   "homepage": "https://nudge.build",
   "license": "MIT",
