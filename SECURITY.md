@@ -19,14 +19,14 @@ Phone sessions, off unless asked for, run Claude Code's own `claude remote-contr
 
 ## Every network call
 
-| Call | What is sent | Turn it off |
-|---|---|---|
-| Public price lists (LiteLLM, OpenRouter), about daily | nothing but the request | `NUDGE_PRICE_FEED=off` |
-| Nudge's public advice service, when Claude plans a helper | the kind of job, such as `locate-definition` | `NUDGE_PUBLIC_API=off` (the bundled rules answer) |
-| GitHub, about hourly, for a new version | nothing but the request | `NUDGE_UPDATES=off` |
-| Outside models, only after `delegate workers` in a project | the job's brief and files, to that model through the user's own AI gateway key | `NUDGE_WORKERS=off` |
-| Organising notes with a decision model, only with `NUDGE_JEV_KEY` set or `NUDGE_NOTES_AI=on` | short lines from the project's notes, to rank and link them | `NUDGE_NOTES_AI=off` |
-| The sharing summary, every 30 minutes unless turned off | kinds of job, sizes, pass and fail counts, the type of failure, the project's language and framework, Nudge's version and the operating system, under a random machine ID ([PRIVACY.md](PRIVACY.md)) | `NUDGE_SHARING=off`; `NUDGE_SHARING_MINUTES` sets how often |
+| Call | Address | What is sent | Turn it off |
+|---|---|---|---|
+| Public price lists (LiteLLM, OpenRouter), about daily | `raw.githubusercontent.com`, `openrouter.ai` | nothing but the request | `NUDGE_PRICE_FEED=off` |
+| Nudge's public advice service, when Claude plans a helper | `nudge-delegation-api.nudge-delegation-api.workers.dev` | the kind of job, such as `locate-definition` | `NUDGE_PUBLIC_API=off` (the bundled rules answer) |
+| GitHub, about hourly, for a new version | `github.com` | nothing but the request | `NUDGE_UPDATES=off` |
+| Outside models, only after `delegate workers` in a project | `ai-gateway.vercel.sh`, `openrouter.ai` | the job's brief and files, to that model through the user's own AI gateway key | `NUDGE_WORKERS=off` |
+| Organising notes with a decision model, only with `NUDGE_JEV_KEY` set or `NUDGE_NOTES_AI=on` | `api.typesafe.ai`, `ai-gateway.vercel.sh` | short lines from the project's notes, to rank and link them | `NUDGE_NOTES_AI=off` |
+| The sharing summary, every 30 minutes unless turned off | `nudge-delegation-api.nudge-delegation-api.workers.dev` | kinds of job, sizes, pass and fail counts, the type of failure, the project's language and framework, Nudge's version and the operating system, under a random machine ID ([PRIVACY.md](PRIVACY.md)) | `NUDGE_SHARING=off`; `NUDGE_SHARING_MINUTES` sets how often |
 
 No code, file names, notes, prompts or results go to Nudge. The only usage data is the sharing summary above, which `nudge sharing off` stops. There is no account.
 

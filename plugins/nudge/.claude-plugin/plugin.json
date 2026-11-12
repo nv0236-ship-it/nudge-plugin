@@ -6,7 +6,7 @@
     "url": "https://nudge.build"
   },
   "description": "Same Claude, under a third of the bill. Nudge hands routine work to a faster, cheaper helper agent, checks every result, and shows you where each dollar went.",
-  "version": "0.48.24",
+  "version": "0.49.0",
   "homepage": "https://nudge.build",
   "license": "MIT",
   "skills": "./skills",
