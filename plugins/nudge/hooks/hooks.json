@@ -74,6 +74,20 @@
             "timeout": 5
           }
         ]
+      },
+      {
+        "matcher": "SubagentHandback",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node",
+            "args": [
+              "${CLAUDE_PLUGIN_ROOT}/hooks/delegation.mjs",
+              "PreToolUse"
+            ],
+            "timeout": 600
+          }
+        ]
       }
     ],
     "SubagentStart": [
