@@ -1,4 +1,4 @@
-# Nudge for Claude Code (0.50.6)
+# Nudge for Claude Code (0.50.7)
 
 ## Is it installed?
 
